@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - 15
+cache:
+  npm: true
+  directories:
+    - build
+    - node_modules
+
+jobs:
+  include:
+    - stage: Build
+      script: npm run build
+    - stage: Publish
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        local_dir: build
+        github_token: $GITHUB_TOKEN
+        keep_history: true
+        on:
+          branch: master
