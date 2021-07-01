@@ -11,6 +11,8 @@ jobs:
   include:
     - stage: Build
       script: npm run build
+    - stage: Test
+      script: npm run test
     - stage: Publish
       deploy:
         provider: pages
