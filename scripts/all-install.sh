@@ -4,4 +4,4 @@ npm install
 
 cd backend && npm install && cd - || exit $?
 
-cd ui && npm install
+cd frontend && npm install
